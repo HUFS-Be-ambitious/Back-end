@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>상품 공구 상세 페이지</title>
+</head>
+<body>
+
+<h1 th:text="${itempost.title}"></h1>
+<table>
+    <tr>
+        <td>
+            <img th:src="@{${itempost.image_path}}" />
+        </td>
+    </tr>
+
+    <tr>
+        <td>모집인원</td>
+        <td th:text="${itempost.present_num} + ' / ' + ${itempost.done_num} + '명'"></td>
+    </tr>
+    <tr>
+        <td>마감시간</td>
+        <td th:text="${itempost.price}"></td>
+    </tr>
+    <tr>
+        <td>총금액</td>
+        <td th:text="${itempost.price} + '원'"></td>
+    </tr>
+    <tr>
+        <td>배달료</td>
+        <td th:text="${itempost.delivery_fee} + '원'"></td>
+    </tr>
+    <tr>
+        <td>1인당 금액</td>
+        <td th:text="(${itempost.price} + ${itempost.delivery_fee})/${itempost.done_num} + '원'"></td>
+    </tr>
+    <tr>
+        <td th:text="${itempost.host_id} + '님이 모집중입니다'"></td>
+    </tr>
+    <tr>
+        <td>매너온도</td>
+        <td>°C</td>
+    </tr>
+</table>
+
+<p th:text="${itempost.content}"></p>
+<a th:href="@{/itempost/modify/{itemPostSeq}
+(itemPostSeq = ${itempost.itemPostSeq})}">글 수정</a>
+<a th:href="@{/itempost/delete(itemPostSeq=${itempost.itemPostSeq})}">삭제</a>
+<a>목록 가기</a>
+</body>
+</html>
