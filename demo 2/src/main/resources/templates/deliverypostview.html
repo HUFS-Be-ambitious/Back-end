@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>배달 공구 상세 페이지</title>
+</head>
+<body>
+
+<h1 th:text="${deliverypost.title}"></h1>
+<table>
+    <tr>
+        <td>모집인원</td>
+        <td th:text="${deliverypost.present_num} + ' / ' + ${deliverypost.done_num} + '명'"></td>
+    </tr>
+    <tr>
+        <td>마감시간</td>
+        <td th:text="${deliverypost.price}"></td>
+    </tr>
+    <tr>
+        <td>가게이름</td>
+        <td th:text="${deliverypost.price} + '원'"></td>
+    </tr>
+    <tr>
+        <td>배달료</td>
+        <td th:text="${deliverypost.delivery_fee} + '원'"></td>
+    </tr>
+    <tr>
+        <td th:text="${deliverypost.host_id} + '님이 모집중입니다'"></td>
+    </tr>
+    <tr>
+        <td>매너온도</td>
+        <td>°C</td>
+    </tr>
+</table>
+
+<p th:text="${deliverypost.content}"></p>
+<a th:href="@{/deliverypost/modify(deliveryPostSeq=${deliverypost.deliveryPostSeq})}">수정</a>
+<a th:href="@{/deliverypost/delete(deliveryPostSeq=${deliverypost.deliveryPostSeq})}">삭제</a>
+</body>
+</html>
