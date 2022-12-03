@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 리스트 페이지</title>
+</head>
+<style>
+
+    .layout {
+      width : 500px;
+      margin : 0 auto;
+      margin-top : 40px;
+    }
+
+</style>
+<body>
+<!--<div class="layout">-->
+<!--    <table>-->
+<!--        <thead>-->
+<!--        <tr>-->
+<!--            <th>글 제목</th>-->
+<!--            <th>작성자</th>-->
+<!--        </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+<!--        <tr th:each="itempost : ${itemPostList}">-->
+<!--            <img th:src="@{${itempost.image_path}}"/>-->
+<!--            <td>-->
+<!--                <a th:text="${itempost.title}" th:href="@{/itempost/view(itemPostSeq=${itempost.itemPostSeq})}"></a>-->
+<!--            </td>-->
+<!--            <td th:text="${itempost.host_id}"></td>-->
+<!--        </tr>-->
+<!--        </tbody>-->
+<!--    </table>-->
+<!--    <th:block th:each="page : ${#numbers.sequence(startPage, endPage)}">-->
+<!--        <a th:if="${page != nowPage}" th:href="@{/itempost/list(page = ${page - 1}, searchKeyword = ${param.searchKeyword})}" th:text="${page}"></a>-->
+<!--        <strong th:if="${page == nowPage}" th:text="${page}" style="color : red"></strong>-->
+<!--    </th:block>-->
+<!--    <form th:action="@{/itempost/list}" method="get">-->
+<!--        <input type="text" name="searchKeyword">-->
+<!--        <button type="submit">검색</button>-->
+<!--    </form>-->
+<!--    <br>-->
+<!--        <a th:href="@{/itempost/write}">글 작성하러 가기</a>-->
+<!--    &lt;!&ndash; 페이지 영역 &ndash;&gt;-->
+<!--    <nav th:if="${totalPage != 0}">-->
+<!--        <div class="container">-->
+<!--            <ul class="pagination pagination-primary m-4">-->
+
+<!--                <li class="page-item ">-->
+<!--                    &lt;!&ndash; 첫 페이지로 이동 &ndash;&gt;-->
+<!--                    <a class="page-link" th:href="@{/itempost/list/{itemCategory}(itemCategory = ${itemCategory}, page=1)}" aria-level="First">-->
+<!--                        <span aria-hidden="true"><i class="fa fa-angle-double-left" aria-hidden="true"></i></span>-->
+<!--                    </a>-->
+<!--                </li>-->
+
+<!--                <li class="page-item active">-->
+<!--                    &lt;!&ndash; 이전 페이지 &ndash;&gt;-->
+<!--                <li th:if="${hasPrev} ? 'disabled'">-->
+<!--                    <a class="page-link" th:href="@{/itempost/list/{itemCategory}(itemCategory = ${itemCategory}, page=${prevIndex})}" aria-level="Previous">&lsaquo;</a>-->
+<!--                    <span aria-hidden="true"></span>-->
+<!--                <li>-->
+<!--                </li>-->
+
+<!--                &lt;!&ndash; 페이지 번호 &ndash;&gt;-->
+<!--                <li th:each="page: ${#numbers.sequence(startNumber, endNumber)}"-->
+<!--                    th:class="(page == ${pageNo}+1) ? 'page-item active'">-->
+<!--                    <a class="page-link" th:text="${page}"-->
+<!--                       th:href="@{/itempost/list/{itemCategory}(itemCategory = ${itemCategory}, page=${page})}"></a>-->
+<!--                </li>-->
+
+<!--                <li class="page-item">-->
+<!--                    &lt;!&ndash; 다음 페이지 &ndash;&gt;-->
+<!--                <li th:if="${hasNext} ? 'disabled'">-->
+<!--                    <a class="page-link" th:href="@{/itempost/list/{itemCategory}(itemCategory = ${itemCategory}, page=${nextIndex})}" aria-level="Next">&rsaquo;</a>-->
+<!--                    <span aria-hidden="true"></span>-->
+<!--                </li>-->
+<!--                </li>-->
+
+<!--                <li class="page-item">-->
+<!--                    &lt;!&ndash; 마지막 페이지 &ndash;&gt;-->
+<!--                    <a class="page-link" th:href="@{/itempost/list/{itemCategory}(itemCategory = ${itemCategory}, page=${totalPage})}" aria-level="Last">-->
+<!--                        <span aria-hidden="true"><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>-->
+<!--                    </a>-->
+<!--                </li>-->
+<!--            </ul>-->
+
+<!--        </div>-->
+<!--    </nav>-->
+<!--</div>-->
+
+</body>
+</html>
