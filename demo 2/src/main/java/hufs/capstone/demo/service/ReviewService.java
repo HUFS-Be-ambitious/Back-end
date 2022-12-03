@@ -1,4 +1,4 @@
-package hufs.capstone.demo.service;
+/*package hufs.capstone.demo.service;
 
 
 import hufs.capstone.demo.dto.ReviewDto;
@@ -70,4 +70,6 @@ public class ReviewService{
         return reviewRepository.findAllByMemberId(memberId);
 
     }
+
 }
+ */

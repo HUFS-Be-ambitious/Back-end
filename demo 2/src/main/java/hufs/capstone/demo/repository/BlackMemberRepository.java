@@ -1,7 +1,6 @@
-package cap.stone.repository;
+package hufs.capstone.demo.repository;
 
-import cap.stone.entity.BlackMemberEntity;
-import cap.stone.entity.MemberEntity;
+import hufs.capstone.demo.entity.BlackMemberEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

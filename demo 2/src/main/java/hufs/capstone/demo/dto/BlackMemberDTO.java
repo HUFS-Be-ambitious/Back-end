@@ -1,6 +1,6 @@
-package cap.stone.dto;
+package hufs.capstone.demo.dto;
 
-import cap.stone.entity.BlackMemberEntity;
+import hufs.capstone.demo.entity.BlackMemberEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

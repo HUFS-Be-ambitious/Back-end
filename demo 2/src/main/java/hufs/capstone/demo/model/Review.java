@@ -1,6 +1,7 @@
 package hufs.capstone.demo.model;
 
 import hufs.capstone.demo.dto.ReviewDto;
+import hufs.capstone.demo.entity.Member;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,7 +23,7 @@ public class Review {
     private String reviewDetail;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private  Member member;
+    private Member member;
 
     public Review() {
         this.personalStoreScore = personalStoreScore;

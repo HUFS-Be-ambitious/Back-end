@@ -5,12 +5,11 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 
 @Entity
 @Getter @Setter
 @Table(name = "member")
-public class MemberEntity {
+public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,12 +22,10 @@ public class MemberEntity {
     @Column(length = 12,name = "phone", unique = true)
     private String phone; //전화번호
     @Column(length = 40, name = "mail", unique = true)
-    @NotBlank
     private String mail; //메일 주소
     @Column(length = 1, name = "gender")
     private int gender; //남자 0, 여자1
     @Column(length = 12, name = "nick", unique = true)
-    @NotBlank
     private String nick; //닉네임
     @Column(name = "point")
     private int point; //포인트
@@ -47,28 +44,28 @@ public class MemberEntity {
     @Column(name = "grade")
     private int grade;
 
-    public static MemberEntity toSaveEntity(MemberDTO memberDTO){
-        MemberEntity memberEntity = new MemberEntity();
-        memberEntity.setLogin(memberDTO.getLogin());
-        memberEntity.setMail(memberDTO.getMail());
-        memberEntity.setPassword(memberDTO.getPassword());
-        memberEntity.setPhone(memberDTO.getPhone());
-        memberEntity.setSchoolname(memberDTO.getSchoolname());
-        memberEntity.setUsername(memberDTO.getUsername());
-        memberEntity.setAddr(memberDTO.getAddr());
-        memberEntity.setGender(memberDTO.getGender());
-        memberEntity.setNick(memberDTO.getNick());
-        memberEntity.setPoint(memberDTO.getPoint());
-        memberEntity.setMScore(memberDTO.getMScore());
-        memberEntity.setAge(memberDTO.getAge());
-        memberEntity.setMajor(memberDTO.getMajor());
-        memberEntity.setSId(memberDTO.getSId());
-        memberEntity.setGrade(memberDTO.getGrade());
-        return memberEntity;
+    public static Member toSaveEntity(MemberDTO memberDTO){
+        Member member = new Member();
+        member.setLogin(memberDTO.getLogin());
+        member.setMail(memberDTO.getMail());
+        member.setPassword(memberDTO.getPassword());
+        member.setPhone(memberDTO.getPhone());
+        member.setSchoolname(memberDTO.getSchoolname());
+        member.setUsername(memberDTO.getUsername());
+        member.setAddr(memberDTO.getAddr());
+        member.setGender(memberDTO.getGender());
+        member.setNick(memberDTO.getNick());
+        member.setPoint(memberDTO.getPoint());
+        member.setMScore(memberDTO.getMScore());
+        member.setAge(memberDTO.getAge());
+        member.setMajor(memberDTO.getMajor());
+        member.setSId(memberDTO.getSId());
+        member.setGrade(memberDTO.getGrade());
+        return member;
     }
-    public static MemberEntity toUpdateEntity(MemberDTO memberDTO){
-        MemberEntity memberEntity = MemberEntity.toSaveEntity(memberDTO);
-        memberEntity.setId(memberDTO.getId());
-        return memberEntity;
+    public static Member toUpdateEntity(MemberDTO memberDTO){
+        Member member = Member.toSaveEntity(memberDTO);
+        member.setId(memberDTO.getId());
+        return member;
     }
 }

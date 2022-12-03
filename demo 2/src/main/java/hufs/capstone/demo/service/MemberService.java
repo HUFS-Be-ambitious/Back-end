@@ -1,7 +1,8 @@
 package hufs.capstone.demo.service;
 
 import hufs.capstone.demo.dto.MemberDTO;
-import hufs.capstone.demo.entity.MemberEntity;
+import hufs.capstone.demo.entity.BlackMemberEntity;
+import hufs.capstone.demo.entity.Member;
 import hufs.capstone.demo.repository.BlackMemberRepository;
 import hufs.capstone.demo.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
@@ -20,8 +21,8 @@ public class MemberService {
 
     public Long save(MemberDTO memberDTO){
         try{
-            MemberEntity memberEntity = MemberEntity.toSaveEntity(memberDTO);
-            Long savedId = memberRepository.save(memberEntity).getId();
+            Member member = Member.toSaveEntity(memberDTO);
+            Long savedId = memberRepository.save(member).getId();
             System.out.println(savedId);
             return savedId;
         }catch (Exception e){
@@ -31,16 +32,16 @@ public class MemberService {
     }
     public List<MemberDTO> findAll(){
         MemberDTO memberDTO = new MemberDTO();
-        List<MemberEntity> memberEntityList = memberRepository.findAll();
+        List<Member> memberList = memberRepository.findAll();
         List<MemberDTO> memberDTOList = new ArrayList<>();
-        for(MemberEntity member: memberEntityList){
+        for(Member member: memberList){
             memberDTOList.add(MemberDTO.toMemberDTO(member));
         return memberDTOList;
         }
         return memberDTOList;
     }
     public MemberDTO find(String login, String password){
-        Optional<MemberEntity> entity = memberRepository.findByLoginAndPassword(login, password);
+        Optional<Member> entity = memberRepository.findByLoginAndPassword(login, password);
         System.out.println(entity);
         return entity.map(MemberDTO::toMemberDTO).orElse(null);
     }
@@ -50,13 +51,13 @@ public class MemberService {
     }
     public String update(MemberDTO memberDTO){
         try{
-            Optional<MemberEntity> fbm = memberRepository.findByLogin(memberDTO.getLogin());
+            Optional<Member> fbm = memberRepository.findByLogin(memberDTO.getLogin());
             if(fbm.isEmpty()){
                 throw new Exception("존재하지않음");
             }
-            MemberEntity memberEntity = MemberEntity.toUpdateEntity(memberDTO);
-            memberEntity.setId(fbm.get().getId());
-            String savedId = memberRepository.save(memberEntity).getLogin();
+            Member member = Member.toUpdateEntity(memberDTO);
+            member.setId(fbm.get().getId());
+            String savedId = memberRepository.save(member).getLogin();
             return savedId;
         }catch (Exception e){
             System.out.println(e);
@@ -65,7 +66,7 @@ public class MemberService {
     }
     public int isSame(MemberDTO dto){
         String nick = dto.getNick();
-        Optional<MemberEntity> byNick = memberRepository.findByNick(nick);
+        Optional<Member> byNick = memberRepository.findByNick(nick);
         if(byNick.isEmpty()){
             return 1;
         }else{
@@ -73,10 +74,10 @@ public class MemberService {
         }
     }
     public MemberDTO findByNick(String nick){
-        Optional<MemberEntity>optionalMemberEntity = memberRepository.findByNick(nick);
+        Optional<Member>optionalMemberEntity = memberRepository.findByNick(nick);
         if(optionalMemberEntity.isPresent()){
-            MemberEntity memberEntity = optionalMemberEntity.get();
-            MemberDTO memberDTO = MemberDTO.toMemberDTO(memberEntity);
+            Member member = optionalMemberEntity.get();
+            MemberDTO memberDTO = MemberDTO.toMemberDTO(member);
             return memberDTO;
         } else{
             return null;
@@ -84,10 +85,10 @@ public class MemberService {
     }
 
     public MemberDTO findById(Long id){
-        Optional<MemberEntity> optionalMemberEntity = memberRepository.findById(id);
+        Optional<Member> optionalMemberEntity = memberRepository.findById(id);
         if(optionalMemberEntity.isPresent()){
-            MemberEntity memberEntity = optionalMemberEntity.get();
-            MemberDTO memberDTO = MemberDTO.toMemberDTO(memberEntity);
+            Member member = optionalMemberEntity.get();
+            MemberDTO memberDTO = MemberDTO.toMemberDTO(member);
             return memberDTO;
         } else{
             return null;
@@ -95,13 +96,13 @@ public class MemberService {
     }
     public Long updateMemberScore(MemberDTO memberDTO, int mannerscore){
         try{
-            Optional<MemberEntity> fbm = memberRepository.findByMail(memberDTO.getMail());
+            Optional<Member> fbm = memberRepository.findByMail(memberDTO.getMail());
             if(fbm.isEmpty()){
                 throw new Exception("존재하지않음");
             }
-            MemberEntity memberEntity = fbm.get();
-            memberEntity.setMScore(mannerscore);
-            Long savedId = memberRepository.save(memberEntity).getId();
+            Member member = fbm.get();
+            member.setMScore(mannerscore);
+            Long savedId = memberRepository.save(member).getId();
             return savedId;
         }catch (Exception e){
             System.out.println(e);
@@ -111,10 +112,10 @@ public class MemberService {
     @Transactional
     public void BlackController(MemberDTO memberDTO, int mannerScore){
         BlackMemberEntity blackMemberEntity = new BlackMemberEntity();
-        Optional<MemberEntity> fbi = memberRepository.findById(memberDTO.getId());
-        MemberEntity memberEntity = fbi.get();
-        mannerScore = memberEntity.getMScore();
-        Long blackId = memberEntity.getId();
+        Optional<Member> fbi = memberRepository.findById(memberDTO.getId());
+        Member member = fbi.get();
+        mannerScore = member.getMScore();
+        Long blackId = member.getId();
         Optional<BlackMemberEntity> fbm = blackMemberRepository.findByMemberID(blackId);
         if(mannerScore < 25){
             if(fbm.isEmpty()){
@@ -131,10 +132,10 @@ public class MemberService {
         }
     }
     public MemberDTO findByLogin(String login){
-        Optional<MemberEntity> optionalMemberEntity = memberRepository.findByLogin(login);
+        Optional<Member> optionalMemberEntity = memberRepository.findByLogin(login);
         if(optionalMemberEntity.isPresent()){
-            MemberEntity memberEntity = optionalMemberEntity.get();
-            MemberDTO memberDTO = MemberDTO.toMemberDTO(memberEntity);
+            Member member = optionalMemberEntity.get();
+            MemberDTO memberDTO = MemberDTO.toMemberDTO(member);
             return memberDTO;
         } else{
             return null;

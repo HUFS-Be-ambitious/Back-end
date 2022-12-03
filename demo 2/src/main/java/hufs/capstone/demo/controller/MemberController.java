@@ -2,6 +2,8 @@ package hufs.capstone.demo.controller;
 
 import hufs.capstone.demo.dto.MemberDTO;
 import hufs.capstone.demo.dto.MemberLoginDTO;
+import hufs.capstone.demo.entity.Member;
+import hufs.capstone.demo.repository.MemberRepository;
 import hufs.capstone.demo.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -11,12 +13,14 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/member")
 public class MemberController {
     private final MemberService memberService;
+    private final MemberRepository memberRepository;
     //회원 가입
     @PostMapping("/login/add")
     public ResponseEntity<MemberDTO> addUser(@RequestBody MemberDTO memberDTO){
@@ -78,11 +82,11 @@ public class MemberController {
     //매너점수 1점 추가
     @PostMapping("/mannerscore/{login}/increase")
     public ResponseEntity<Integer> increaseMannerScore(@PathVariable String login){
-        MemberDTO dto = memberService.findByLoginId(login);
+        MemberDTO dto = memberService.findByLogin(login);
         int newMscore = dto.getMScore();
         newMscore++;
-        Optional<MemberEntity> fbl = memberRepository.findByLogin(login);
-        MemberEntity memberEntity = fbl.get();
+        Optional<Member> fbl = memberRepository.findByLogin(login);
+        Member memberEntity = fbl.get();
         memberEntity.setMScore(newMscore);
         memberRepository.save(memberEntity);
         memberService.BlackController(dto, newMscore);
@@ -91,11 +95,11 @@ public class MemberController {
     //매너 점수 1점 감소
     @PostMapping("/mannerscore/{login}/decrease")
     public ResponseEntity<String> decreaseMannerScore(@PathVariable String login){
-        MemberDTO dto = memberService.findByLoginId(login);
+        MemberDTO dto = memberService.findByLogin(login);
         int newMscore = dto.getMScore();
         newMscore--;
-        Optional<MemberEntity> fbl = memberRepository.findByLogin(login);
-        MemberEntity memberEntity = fbl.get();
+        Optional<Member> fbl = memberRepository.findByLogin(login);
+        Member memberEntity = fbl.get();
         memberEntity.setMScore(newMscore);
         memberRepository.save(memberEntity);
         memberService.BlackController(dto, newMscore);

@@ -1,6 +1,6 @@
 package hufs.capstone.demo.dto;
 
-import hufs.capstone.demo.entity.MemberEntity;
+import hufs.capstone.demo.entity.Member;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -46,24 +46,24 @@ public class MemberDTO {
         this.grade = grade;
     }
 
-    public static MemberDTO toMemberDTO(MemberEntity memberEntity){
+    public static MemberDTO toMemberDTO(Member member){
         MemberDTO memberDTO = new MemberDTO();
-        memberDTO.setId(memberEntity.getId());
-        memberDTO.setLogin(memberEntity.getLogin());
-        memberDTO.setMail(memberEntity.getMail());
-        memberDTO.setPassword(memberEntity.getPassword());
-        memberDTO.setSchoolname(memberEntity.getSchoolname());
-        memberDTO.setPhone(memberEntity.getPhone());
-        memberDTO.setAddr(memberEntity.getAddr());
-        memberDTO.setGender(memberEntity.getGender());
-        memberDTO.setPoint(memberEntity.getPoint());
-        memberDTO.setMScore(memberEntity.getMScore());
-        memberDTO.setAge(memberEntity.getAge());
-        memberDTO.setMajor(memberEntity.getMajor());
-        memberDTO.setSId(memberEntity.getSId());
-        memberDTO.setUsername(memberEntity.getUsername());
-        memberDTO.setNick(memberEntity.getNick());
-        memberDTO.setGrade(memberEntity.getGrade());
+        memberDTO.setId(member.getId());
+        memberDTO.setLogin(member.getLogin());
+        memberDTO.setMail(member.getMail());
+        memberDTO.setPassword(member.getPassword());
+        memberDTO.setSchoolname(member.getSchoolname());
+        memberDTO.setPhone(member.getPhone());
+        memberDTO.setAddr(member.getAddr());
+        memberDTO.setGender(member.getGender());
+        memberDTO.setPoint(member.getPoint());
+        memberDTO.setMScore(member.getMScore());
+        memberDTO.setAge(member.getAge());
+        memberDTO.setMajor(member.getMajor());
+        memberDTO.setSId(member.getSId());
+        memberDTO.setUsername(member.getUsername());
+        memberDTO.setNick(member.getNick());
+        memberDTO.setGrade(member.getGrade());
         return memberDTO;
     }
 }

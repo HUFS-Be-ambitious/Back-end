@@ -1,6 +1,7 @@
-package hufs.capstone.demo.controller;
+/*package hufs.capstone.demo.controller;
 
 import hufs.capstone.demo.dto.ReviewDto;
+import hufs.capstone.demo.service.MemberService;
 import hufs.capstone.demo.service.ReviewService;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -59,3 +60,5 @@ public class ReviewController {
 
 
 }
+
+ */
