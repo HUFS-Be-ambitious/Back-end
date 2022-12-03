@@ -24,15 +24,15 @@ public class Member {
     @Column(length = 40, name = "mail", unique = true)
     private String mail; //메일 주소
     @Column(length = 1, name = "gender")
-    private int gender; //남자 0, 여자1
+    private Integer gender; //남자 0, 여자1
     @Column(length = 12, name = "nick", unique = true)
     private String nick; //닉네임
     @Column(name = "point")
-    private int point; //포인트
+    private Integer point; //포인트
     @Column(name = "mScore")
-    private int mScore; //매너점수
+    private Integer mScore; //매너점수
     @Column(name = "age")
-    private int age; //나이
+    private Integer age; //나이
     @Column(length = 20, name = "schoolname")
     private String schoolname; //학교 이름
     @Column(name = "major")
@@ -42,7 +42,7 @@ public class Member {
     @Column(length = 20, name = "password")
     private String password; //비밀번호
     @Column(name = "grade")
-    private int grade;
+    private Integer grade;
 
     public static Member toSaveEntity(MemberDTO memberDTO){
         Member member = new Member();

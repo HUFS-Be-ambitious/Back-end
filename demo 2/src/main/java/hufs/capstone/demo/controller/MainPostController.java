@@ -1,7 +1,7 @@
 package hufs.capstone.demo.controller;
 
-import hufs.capstone.demo.entity.DeliveryPost;
-import hufs.capstone.demo.entity.ItemPost;
+import hufs.capstone.demo.model.DeliveryPost;
+import hufs.capstone.demo.model.ItemPost;
 import hufs.capstone.demo.service.DeliveryPostService;
 import hufs.capstone.demo.service.ItemPostService;
 import hufs.capstone.demo.service.MainPostService;

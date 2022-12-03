@@ -1,6 +1,6 @@
 package hufs.capstone.demo.repository;
 
-import hufs.capstone.demo.entity.ItemGuestList;
+import hufs.capstone.demo.model.ItemGuestList;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

@@ -1,6 +1,6 @@
 package hufs.capstone.demo.dto;
 
-import hufs.capstone.demo.entity.DeliveryGuestList;
+import hufs.capstone.demo.model.DeliveryGuestList;
 import lombok.Getter;
 
 

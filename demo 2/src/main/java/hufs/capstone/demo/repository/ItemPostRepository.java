@@ -1,6 +1,6 @@
 package hufs.capstone.demo.repository;
 
-import hufs.capstone.demo.entity.ItemPost;
+import hufs.capstone.demo.model.ItemPost;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
