@@ -4,7 +4,7 @@ import hufs.capstone.demo.dto.DeliveryPostDto;
 import hufs.capstone.demo.dto.DeliveryPostUpdateDto;
 import hufs.capstone.demo.dto.DeliveryPostWriteDto;
 import hufs.capstone.demo.dto.DeliveryPostResponseDto;
-import hufs.capstone.demo.entity.DeliveryPost;
+import hufs.capstone.demo.model.DeliveryPost;
 import hufs.capstone.demo.repository.DeliveryPostRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

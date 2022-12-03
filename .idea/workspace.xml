@@ -4,7 +4,59 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0047edc4-ec89-4fc1-be56-c4a432c4f764" name="Changes" comment="jundo 파트 개발" />
+    <list default="true" id="0047edc4-ec89-4fc1-be56-c4a432c4f764" name="Changes" comment="jundo 파트 개발">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/.gradle/7.5.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/.gradle/7.5.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/.gradle/7.5.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/.gradle/7.5.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/.gradle/7.5.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/.gradle/7.5.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/.gradle/7.5.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/.gradle/7.5.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/.gradle/7.5.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/controller/MainPostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/controller/MainPostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/controller/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/dto/DeliveryCommentRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/dto/DeliveryCommentRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/dto/DeliveryCommentResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/dto/DeliveryCommentResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/dto/DeliveryGuestResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/dto/DeliveryGuestResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/dto/DeliveryPostDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/dto/DeliveryPostDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/dto/DeliveryPostWriteDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/dto/DeliveryPostWriteDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/dto/ItemCommentRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/dto/ItemCommentRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/dto/ItemCommentResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/dto/ItemCommentResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/dto/ItemGuestResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/dto/ItemGuestResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/dto/ItemPostDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/dto/ItemPostDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/dto/ItemPostWriteDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/dto/ItemPostWriteDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/dto/MemberDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/dto/MemberDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/entity/BaseTimeEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/entity/DeliveryComment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/entity/DeliveryGuestList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/entity/DeliveryPost.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/entity/ItemComment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/entity/ItemGuestList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/entity/ItemPost.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/model/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/model/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/repository/DeliveryCommentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/repository/DeliveryCommentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/repository/DeliveryGuestRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/repository/DeliveryGuestRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/repository/DeliveryPostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/repository/DeliveryPostRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/repository/ItemCommentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/repository/ItemCommentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/repository/ItemGuestRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/repository/ItemGuestRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/repository/ItemPostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/repository/ItemPostRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/service/DeliveryCommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/service/DeliveryCommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/service/DeliveryGuestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/service/DeliveryGuestService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/service/DeliveryPostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/service/DeliveryPostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/service/ItemCommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/service/ItemCommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/service/ItemGuestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/service/ItemGuestService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/service/ItemPostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/service/ItemPostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/service/MainPostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/service/MainPostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/service/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/service/MemberService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,17 +86,19 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2IHIG8gEv5Ff2E85fTFcDtuaCrR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/junseo/Desktop/무제/demo 2/src/main/java/hufs/capstone/demo&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/junseo/Desktop/무제/demo 2/src/main/java/hufs/capstone/demo"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo" />
@@ -61,6 +115,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669831985575</updated>
+      <workItem from="1670096211441" duration="681000" />
     </task>
     <task id="LOCAL-00001" summary="jundo 파트 개발">
       <created>1669832463188</created>
@@ -71,6 +126,9 @@
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

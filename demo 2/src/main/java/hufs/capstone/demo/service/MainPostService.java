@@ -1,8 +1,8 @@
 package hufs.capstone.demo.service;
 
 
-import hufs.capstone.demo.entity.DeliveryPost;
-import hufs.capstone.demo.entity.ItemPost;
+import hufs.capstone.demo.model.DeliveryPost;
+import hufs.capstone.demo.model.ItemPost;
 import hufs.capstone.demo.repository.DeliveryPostRepository;
 import hufs.capstone.demo.repository.ItemPostRepository;
 import lombok.RequiredArgsConstructor;
