@@ -1,7 +1,9 @@
 package hufs.capstone.demo.dto;
 
 import lombok.Builder;
+import lombok.Getter;
 
+@Getter
 public class DeliveryPostResponseDto {
     private Long deliveryPostSeq;
     private String title;

@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class DeliveryPostUpdateDto {
     private String title;
-    private String store_name;
+    private String storeName;
     private Long delivery_fee;
     private String storeCategory;
     private String content;
@@ -19,15 +19,15 @@ public class DeliveryPostUpdateDto {
 
 
     @Builder
-    public void deliveryPostUpdateDto(String title, String store_name, String storeCategory,
-                                      Long delivery_fee, Long done_num,
-                                      String endTime, String location, Long point, String content) {
+    public void deliveryPostUpdateDto(String title, String storeName, String storeCategory,
+                                      Long delivery_fee, String endTime, Long done_num,
+                                       String location, Long point, String content) {
         this.title = title;
-        this.store_name = store_name;
+        this.storeName = storeName;
         this.storeCategory = storeCategory;
         this.delivery_fee = delivery_fee;
-        this.done_num = done_num;
         this.endTime = endTime;
+        this.done_num = done_num;
         this.location = location;
         this.point = point;
         this.content = content;
