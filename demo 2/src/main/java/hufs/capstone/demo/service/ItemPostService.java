@@ -5,7 +5,9 @@ import hufs.capstone.demo.dto.ItemPostResponseDto;
 import hufs.capstone.demo.dto.ItemPostUpdateDto;
 import hufs.capstone.demo.dto.ItemPostWriteDto;
 import hufs.capstone.demo.model.ItemPost;
+import hufs.capstone.demo.model.Member;
 import hufs.capstone.demo.repository.ItemPostRepository;
+import hufs.capstone.demo.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -15,6 +17,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.util.UUID;
 
@@ -23,6 +26,44 @@ import java.util.UUID;
 public class ItemPostService {
 
     private final ItemPostRepository itemPostRepository;
+    private final MemberRepository memberRepository;
+
+//    @Transactional
+//    public void write(ItemPostWriteDto writeDto, String userId, MultipartFile file) throws Exception {
+//        String projectPath = System.getProperty("user.dir") + "\\demo 2\\src\\main\\resources\\static\\files";
+//
+//        UUID uuid = UUID.randomUUID(); //식별자(랜덤이름 생성)
+//
+//        String fileName = uuid + "_" + file.getOriginalFilename();
+//
+//        File saveFile = new File(projectPath, fileName);
+//
+//        file.transferTo(saveFile);
+//
+//        String image_name = fileName;
+//        String image_path = "/files/" + fileName;
+//        String host_id = userId;    //session 아이디가 들어가야됨
+////        String host_account = getMemberId; //session 아이디에 해당되는 계좌가 들어가야 됨
+//
+//        ItemPost itemPost = new ItemPost(
+//                writeDto.getTitle(),
+//                writeDto.getItem_name(),
+//                writeDto.getItemCategory(),
+//                writeDto.getPrice(),
+//                writeDto.getDelivery_fee(),
+//                writeDto.getDone_num(),
+//                writeDto.getEndTime(),
+//                host_id,
+//                host_account,
+//                writeDto.getLocation(),
+//                writeDto.getPoint(), //로직 처리 필요
+//                writeDto.getContent(),
+//                image_name,
+//                image_path
+//        );
+//
+//        itemPostRepository.save(itemPost);
+//    }
 
     //게시물 작성
     @Transactional
@@ -39,8 +80,11 @@ public class ItemPostService {
 
         String image_name = fileName;
         String image_path = "/files/" + fileName;
-        String host_id = "ckdanr98";    //session 아이디가 들어가야됨
-        String host_account = "10010956037840"; //session 아이디에 해당되는 계좌가 들어가야 됨
+        String hostId = "ckdanr98";    //session 아이디가 들어가야됨
+//        Member member  = memberRepository.findByLogin(hostId).orElseThrow(()
+//                -> new IllegalArgumentException("해당 게시물이 존재하지 않습니다."));
+//        String hostAccount = member.getAccount();
+        String hostAccount = "10010956037840"; //session 아이디에 해당되는 계좌가 들어가야 됨
 
         ItemPost itemPost = new ItemPost(
                 writeDto.getTitle(),
@@ -48,10 +92,10 @@ public class ItemPostService {
                 writeDto.getItemCategory(),
                 writeDto.getPrice(),
                 writeDto.getDelivery_fee(),
-                writeDto.getDone_num(),
                 writeDto.getEndTime(),
-                host_id,
-                host_account,
+                writeDto.getDone_num(),
+                hostId,
+                hostAccount,
                 writeDto.getLocation(),
                 writeDto.getPoint(), //로직 처리 필요
                 writeDto.getContent(),
@@ -209,8 +253,8 @@ public class ItemPostService {
 
 
         itemPost.update(updateDto.getTitle(), updateDto.getItem_name(), updateDto.getItemCategory(),
-                updateDto.getPrice(), updateDto.getDelivery_fee(), updateDto.getDone_num(),
-                updateDto.getEndTime(), updateDto.getLocation(), updateDto.getPoint(),
+                updateDto.getPrice(), updateDto.getDelivery_fee(), updateDto.getEndTime(),
+                updateDto.getDone_num(), updateDto.getLocation(), updateDto.getPoint(),
                 updateDto.getContent(), image_name, image_path);
     }
 

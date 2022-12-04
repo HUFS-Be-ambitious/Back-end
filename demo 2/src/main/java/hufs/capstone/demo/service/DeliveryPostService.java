@@ -4,8 +4,11 @@ import hufs.capstone.demo.dto.DeliveryPostDto;
 import hufs.capstone.demo.dto.DeliveryPostUpdateDto;
 import hufs.capstone.demo.dto.DeliveryPostWriteDto;
 import hufs.capstone.demo.dto.DeliveryPostResponseDto;
-import hufs.capstone.demo.model.DeliveryPost;
+import hufs.capstone.demo.model.*;
 import hufs.capstone.demo.repository.DeliveryPostRepository;
+import hufs.capstone.demo.repository.DeliveryStoreRepository;
+import hufs.capstone.demo.repository.MemberRepository;
+import hufs.capstone.demo.repository.StoreMenuRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -16,6 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
+import java.util.List;
 import java.util.UUID;
 
 @RequiredArgsConstructor
@@ -23,6 +27,9 @@ import java.util.UUID;
 public class DeliveryPostService {
 
     private final DeliveryPostRepository deliveryPostRepository;
+    private final MemberRepository memberRepository;
+    private final DeliveryStoreRepository deliveryStoreRepository;
+    private final StoreMenuRepository storeMenuRepository;
 
     //게시물 작성
     @Transactional
@@ -39,25 +46,28 @@ public class DeliveryPostService {
 
         String image_name = fileName;
         String image_path = "/files/" + fileName;
-        String host_id = "ckdanr98";    //session 아이디가 들어가야됨
-        String host_account = "10010956037840"; //session 아이디에 해당되는 계좌가 들어가야 됨
+        String hostId = "ckdanr98";    //session 아이디가 들어가야됨
+
+//        Member member  = memberRepository.findByLogin(hostId).orElseThrow(()
+//                -> new IllegalArgumentException("해당 게시물이 존재하지 않습니다."));
+//        String hostAccount = member.getAccount();
+        String hostAccount = "10010956037840"; //session 아이디에 해당되는 계좌가 들어가야 됨
 
         DeliveryPost deliveryPost = new DeliveryPost(
                 writeDto.getTitle(),
-                writeDto.getStore_name(),
+                writeDto.getStoreName(),
                 writeDto.getStoreCategory(),
                 writeDto.getDelivery_fee(),
-                writeDto.getDone_num(),
                 writeDto.getEndTime(),
-                host_id,
-                host_account,
+                writeDto.getDone_num(),
+                hostId,
+                hostAccount,
                 writeDto.getLocation(),
                 writeDto.getPoint(), //로직 처리 필요
                 writeDto.getContent(),
                 image_name,
                 image_path
         );
-
 
         deliveryPostRepository.save(deliveryPost);
     }
@@ -145,7 +155,11 @@ public class DeliveryPostService {
         DeliveryPost deliveryPost = deliveryPostRepository.findById(deliveryPostSeq).orElseThrow(()
                 -> new IllegalArgumentException("해당 게시물이 존재하지 않습니다."));
 
-        return new DeliveryPostDto(deliveryPost);
+        String storeName = deliveryPost.getStoreName();
+        Long storeId = deliveryStoreRepository.findStoreIdByStoreName(storeName);
+        List<String> storeMenu = storeMenuRepository.findByStoreId(storeId);
+
+        return new DeliveryPostDto(deliveryPost,storeMenu);
     }
 
     // 게시글 삭제
@@ -175,9 +189,9 @@ public class DeliveryPostService {
         String image_path = "/files/" + fileName;
 
 
-        deliveryPostTemp.update(updateDto.getTitle(), updateDto.getStore_name(), updateDto.getStoreCategory(),
-                updateDto.getDelivery_fee(),
-                updateDto.getDone_num(), updateDto.getEndTime(), updateDto.getLocation(), updateDto.getPoint(),
+        deliveryPostTemp.update(updateDto.getTitle(), updateDto.getStoreName(), updateDto.getStoreCategory(),
+                updateDto.getDelivery_fee(), updateDto.getEndTime(),
+                updateDto.getDone_num(), updateDto.getLocation(), updateDto.getPoint(),
                 updateDto.getContent(), image_name, image_path);
     }
     @Transactional

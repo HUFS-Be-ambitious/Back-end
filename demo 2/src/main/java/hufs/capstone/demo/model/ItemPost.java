@@ -43,7 +43,7 @@ public class ItemPost extends BaseTimeEntity{
 
     @Builder
     public ItemPost(String title, String item_name, String itemCategory, Long price,
-                    Long delivery_fee, Long done_num, String endTime,
+                    Long delivery_fee, String endTime,  Long done_num,
                     String host_id, String host_account, String location, Long point,
                     String content, String image_name, String image_path) {
         this.title = title;
@@ -51,8 +51,8 @@ public class ItemPost extends BaseTimeEntity{
         this.itemCategory = itemCategory;
         this.price = price;
         this.delivery_fee = delivery_fee;
-        this.done_num = done_num;
         this.endTime = endTime;
+        this.done_num = done_num;
         this.host_id = host_id;
         this.host_account = host_account;
         this.location = location;
@@ -63,16 +63,16 @@ public class ItemPost extends BaseTimeEntity{
     }
 
     public void update(String title, String item_name,String itemCategory,
-                       Long price, Long delivery_fee, Long done_num,
-                       String endTime, String location, Long point, String content,
+                       Long price, Long delivery_fee, String endTime, Long done_num,
+                       String location, Long point, String content,
                        String image_name, String image_path) {
         this.title = title;
         this.item_name = item_name;
         this.itemCategory = itemCategory;
         this.price = price;
         this.delivery_fee = delivery_fee;
-        this.done_num = done_num;
         this.endTime = endTime;
+        this.done_num = done_num;
         this.location = location;
         this.point = point;
         this.content = content;
