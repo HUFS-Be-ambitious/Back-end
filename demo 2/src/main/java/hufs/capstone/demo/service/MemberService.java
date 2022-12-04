@@ -64,7 +64,7 @@ public class MemberService {
             return null;
         }
     }
-    public Integer isSame(MemberDTO dto){
+    public int isSame(MemberDTO dto){
         String nick = dto.getNick();
         Optional<Member> byNick = memberRepository.findByNick(nick);
         if(byNick.isEmpty()){
@@ -109,28 +109,8 @@ public class MemberService {
             return -1L;
         }
     }
-    public void increaseMannerScore(MemberDTO dto, String login){
-        dto = findByLogin(login);
-        Integer newMscore = dto.getMScore();
-        System.out.println(newMscore);
-        newMscore++;
-        Optional<Member> fbl = memberRepository.findByLogin(login);
-        Member member = fbl.get();
-        member.setMScore(newMscore);
-        memberRepository.save(member);
-    }
-    public void decreaseMannerScore(MemberDTO dto, String login){
-        dto = findByLogin(login);
-        Integer newMscore = dto.getMScore();
-        System.out.println(newMscore);
-        newMscore--;
-        Optional<Member> fbl = memberRepository.findByLogin(login);
-        Member member = fbl.get();
-        member.setMScore(newMscore);
-        memberRepository.save(member);
-    }
     @Transactional
-    public void BlackController(MemberDTO memberDTO, Integer mannerScore){
+    public void BlackController(MemberDTO memberDTO, int mannerScore){
         BlackMemberEntity blackMemberEntity = new BlackMemberEntity();
         Optional<Member> fbi = memberRepository.findById(memberDTO.getId());
         Member member = fbi.get();

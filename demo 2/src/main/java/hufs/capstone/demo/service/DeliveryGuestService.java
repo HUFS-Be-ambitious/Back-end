@@ -1,7 +1,7 @@
 package hufs.capstone.demo.service;
 
-import hufs.capstone.demo.model.DeliveryGuestList;
-import hufs.capstone.demo.model.DeliveryPost;
+import hufs.capstone.demo.entity.DeliveryGuestList;
+import hufs.capstone.demo.entity.DeliveryPost;
 import hufs.capstone.demo.repository.DeliveryGuestRepository;
 import hufs.capstone.demo.repository.DeliveryPostRepository;
 import hufs.capstone.demo.repository.MemberRepository;

@@ -1,8 +1,8 @@
 package hufs.capstone.demo.service;
 
 import hufs.capstone.demo.dto.DeliveryCommentRequestDto;
-import hufs.capstone.demo.model.DeliveryComment;
-import hufs.capstone.demo.model.DeliveryPost;
+import hufs.capstone.demo.entity.DeliveryComment;
+import hufs.capstone.demo.entity.DeliveryPost;
 import hufs.capstone.demo.repository.DeliveryCommentRepository;
 import hufs.capstone.demo.repository.DeliveryPostRepository;
 import hufs.capstone.demo.repository.MemberRepository;

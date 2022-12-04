@@ -16,19 +16,19 @@ public class MemberDTO {
     private String schoolname;
     private String phone;
     private String addr;
-    private Integer gender;
-    private Integer point;
-    private Integer mScore;
-    private Integer age;
+    private int gender;
+    private int point;
+    private int mScore;
+    private int age;
     private String major;
     private String sId;
     private String username;
     private String nick;
-    private Integer grade;
+    private int grade;
 
     public MemberDTO(String login, String mail, String password, String phone, String schoolname, String sId, String major,
-                     String nick, String addr, String username, Integer gender, Integer point,
-                     Integer mScore, Integer age, Integer grade) {
+                     String nick, String addr, String username, int gender, int point,
+                     int mScore, int age, int grade) {
         this.login = login;
         this.mail = mail;
         this.password = password;

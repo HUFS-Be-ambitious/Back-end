@@ -1,8 +1,8 @@
 package hufs.capstone.demo.service;
 
 import hufs.capstone.demo.dto.ItemCommentRequestDto;
-import hufs.capstone.demo.model.ItemComment;
-import hufs.capstone.demo.model.ItemPost;
+import hufs.capstone.demo.entity.ItemComment;
+import hufs.capstone.demo.entity.ItemPost;
 import hufs.capstone.demo.repository.ItemCommentRepository;
 import hufs.capstone.demo.repository.ItemPostRepository;
 import hufs.capstone.demo.repository.MemberRepository;

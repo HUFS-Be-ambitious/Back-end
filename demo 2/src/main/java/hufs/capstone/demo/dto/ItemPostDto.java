@@ -1,6 +1,6 @@
 package hufs.capstone.demo.dto;
 
-import hufs.capstone.demo.model.ItemPost;
+import hufs.capstone.demo.entity.ItemPost;
 import lombok.Getter;
 
 import java.util.List;

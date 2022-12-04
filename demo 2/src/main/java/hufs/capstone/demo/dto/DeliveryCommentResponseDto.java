@@ -1,6 +1,6 @@
 package hufs.capstone.demo.dto;
 
-import hufs.capstone.demo.model.DeliveryComment;
+import hufs.capstone.demo.entity.DeliveryComment;
 import lombok.Getter;
 
 import java.time.LocalDateTime;

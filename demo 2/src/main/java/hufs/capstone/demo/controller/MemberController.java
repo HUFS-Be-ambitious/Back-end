@@ -83,29 +83,19 @@ public class MemberController {
     @PostMapping("/mannerscore/{login}/increase")
     public ResponseEntity<Integer> increaseMannerScore(@PathVariable String login){
         MemberDTO dto = memberService.findByLogin(login);
-        memberService.increaseMannerScore(dto,login);
-        Integer newMscore = dto.getMScore();
-        memberService.BlackController(dto, newMscore);
-        /*int newMscore = dto.getMScore();
+        int newMscore = dto.getMScore();
         newMscore++;
         Optional<Member> fbl = memberRepository.findByLogin(login);
         Member memberEntity = fbl.get();
         memberEntity.setMScore(newMscore);
         memberRepository.save(memberEntity);
         memberService.BlackController(dto, newMscore);
-
-         */
         return new ResponseEntity<>(HttpStatus.OK); //페이지 어디로 redirect?
     }
     //매너 점수 1점 감소
     @PostMapping("/mannerscore/{login}/decrease")
     public ResponseEntity<String> decreaseMannerScore(@PathVariable String login){
         MemberDTO dto = memberService.findByLogin(login);
-        memberService.decreaseMannerScore(dto, login);
-        Integer newMscore = dto.getMScore();
-        memberService.BlackController(dto, newMscore);
-        return new ResponseEntity<>(HttpStatus.OK);
-        /*MemberDTO dto = memberService.findByLogin(login);
         int newMscore = dto.getMScore();
         newMscore--;
         Optional<Member> fbl = memberRepository.findByLogin(login);
@@ -114,8 +104,6 @@ public class MemberController {
         memberRepository.save(memberEntity);
         memberService.BlackController(dto, newMscore);
         return new ResponseEntity<>(HttpStatus.OK);
-
-         */
     }
 
     @GetMapping("/findby/{login}")

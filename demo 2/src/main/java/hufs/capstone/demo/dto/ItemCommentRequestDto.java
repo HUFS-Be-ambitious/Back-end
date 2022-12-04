@@ -1,8 +1,8 @@
 package hufs.capstone.demo.dto;
 
-import hufs.capstone.demo.model.ItemComment;
-import hufs.capstone.demo.model.ItemPost;
-import hufs.capstone.demo.model.Member;
+import hufs.capstone.demo.entity.ItemComment;
+import hufs.capstone.demo.entity.ItemPost;
+import hufs.capstone.demo.entity.Member;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
