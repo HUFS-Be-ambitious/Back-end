@@ -12,9 +12,12 @@ public class MvcConfig implements WebMvcConfigurer{
         registry.addInterceptor(new InterceptorConfig())
                 .order(0)
                 //적용할 url
-                .addPathPatterns("/**")
+                .addPathPatterns("/itempost/write", "/deliverypost/write","/itempost/update/**",
+                        "/deliverypost/update/**", "/itempost/delete", "/deliverypost/delete",
+                        "/member/mod/**", "/member/login/delete", "/member/mannerscore/**")
                 //제외할 url
-                .excludePathPatterns("/member/login" ,"/member/login/add","/member/find-all","/css/**", "/*.ico", "/error");
+                .excludePathPatterns("/member/login" ,"/member/login/add","/member/find-all","/css/**", "/*.ico", "/error",
+                        "/**", "/itempost/list/**", "/deliverypost/list/**");
     }
     @Bean
     public InterceptorConfig interceptorConfig(){
