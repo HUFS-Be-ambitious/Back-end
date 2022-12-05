@@ -42,10 +42,14 @@ public class MemberController {
     }
 
     //회원 정보 수정
-    @PostMapping("/login/mod")
-    public ResponseEntity<MemberDTO> modUser(@RequestBody MemberDTO dto){
+    @PostMapping("/{login}/mod")
+    public ResponseEntity<MemberDTO> modUser(@RequestBody MemberDTO dto, @PathVariable String login){
         if(memberService.update(dto) != null){
-            return new ResponseEntity<>(dto, HttpStatus.OK);
+            if(dto.getLogin() != login){
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            } else{
+                return new ResponseEntity<>(dto, HttpStatus.OK);
+            }
         } else{
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
