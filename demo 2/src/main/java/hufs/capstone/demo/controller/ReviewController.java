@@ -15,6 +15,7 @@ import java.util.Map;
 @Log4j2
 @RestController
 @AllArgsConstructor
+@CrossOrigin("*")
 public class ReviewController {
     public final ReviewService reviewService;
     public final MemberService memberService;

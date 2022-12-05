@@ -14,6 +14,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
+@CrossOrigin("*")
 public class ItemPostController {
     private final ItemPostService itemPostService;
     private final ItemGuestService itemGuestService;

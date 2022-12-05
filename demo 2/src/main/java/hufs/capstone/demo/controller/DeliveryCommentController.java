@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
+@CrossOrigin("*")
 public class DeliveryCommentController {
     private final DeliveryCommentService commentService;
 
