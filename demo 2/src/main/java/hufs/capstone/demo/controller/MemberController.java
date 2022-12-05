@@ -43,7 +43,7 @@ public class MemberController {
     }
 
     //회원 정보 수정
-    @PostMapping("/{login}/mod")
+    @PostMapping("/mod/{login}")
     public ResponseEntity<MemberDTO> modUser(@RequestBody MemberDTO dto, HttpServletRequest req){
         HttpSession session = req.getSession();
         String login = (String) session.getAttribute("id");
