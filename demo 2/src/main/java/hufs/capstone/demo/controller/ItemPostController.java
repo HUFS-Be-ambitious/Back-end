@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
@@ -19,22 +20,23 @@ public class ItemPostController {
     private final ItemPostService itemPostService;
     private final ItemGuestService itemGuestService;
 
-    HttpSession session;
+//    HttpSession session;
 //    private final MemberService memberService;
 
     //물건
 
 
+    @PostMapping("/itempost/write")
+    public void itemPostWrite(@RequestPart ItemPostWriteDto writeDto, @RequestPart MultipartFile file, HttpSession session) throws Exception {
+
+        String userId = (String)session.getAttribute("id");
+        itemPostService.write(writeDto, userId, file); //session 처리 필요
+    }
+
 //    @PostMapping("/itempost/write")
 //    public void itemPostWrite(@RequestPart ItemPostWriteDto writeDto, @RequestPart MultipartFile file) throws Exception {
-//        String userId = (String)session.getAttribute("id");
-//        itemPostService.write(writeDto, userId, file); //session 처리 필요
+//        itemPostService.write(writeDto, file); //session 처리 필요
 //    }
-
-    @PostMapping("/itempost/write")
-    public void itemPostWrite(@RequestPart ItemPostWriteDto writeDto, @RequestPart MultipartFile file) throws Exception {
-        itemPostService.write(writeDto, file); //session 처리 필요
-    }
 
 
 
@@ -98,13 +100,15 @@ public class ItemPostController {
 
     //공구 참여 등록
     @GetMapping("/itempost/view/{itemPostSeq}/register")
-    public void itemPostGuestRegister(@PathVariable Long itemPostSeq, String userId) {
+    public void itemPostGuestRegister(@PathVariable Long itemPostSeq, HttpSession session) {
+        String userId = (String)session.getAttribute("id");
         itemGuestService.guestSave(itemPostSeq, userId);
     }
 
     //공구 참여 취소
     @DeleteMapping("/itempost/view/{itemPostSeq}/register")
-    public void itemPostGuestDelete(@PathVariable Long itemPostSeq, String userId) {
+    public void itemPostGuestDelete(@PathVariable Long itemPostSeq, HttpSession session) {
+        String userId = (String)session.getAttribute("id");
         itemGuestService.guestDelete(itemPostSeq, userId);
     }
 

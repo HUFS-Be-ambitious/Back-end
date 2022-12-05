@@ -31,8 +31,10 @@ public class DeliveryPostController {
 //    }
 
     @PostMapping("/deliverypost/write")
-    public void deliveryPostWrite(@RequestPart DeliveryPostWriteDto writeDto, @RequestPart MultipartFile file) throws Exception{
-        deliveryPostService.write(writeDto, file); //session 처리 필요  
+    public void deliveryPostWrite(@RequestPart DeliveryPostWriteDto writeDto, @RequestPart MultipartFile file, HttpSession session) throws Exception{
+        String userId = (String)session.getAttribute("id");
+//        String userId = "ckdanr98";
+        deliveryPostService.write(writeDto, userId, file); //session 처리 필요
     }
 
 
@@ -96,7 +98,8 @@ public class DeliveryPostController {
     }
     //공구 참여 등록
     @GetMapping("/deliverypost/view/{deliveryPostSeq}/register")
-    public void deliveryPostGuestRegister(@PathVariable Long deliveryPostSeq, String userId) {
+    public void deliveryPostGuestRegister(@PathVariable Long deliveryPostSeq, HttpSession session) {
+        String userId = (String)session.getAttribute("id");
         deliveryGuestService.guestSave(deliveryPostSeq, userId);
     }
 

@@ -13,7 +13,7 @@ public class DeliveryCommentResponseDto {
     private String createdDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm"));
     private String modifiedDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm"));
 
-    private String nickname;
+    private String login;
     private Long deliveryPostSeq;
 
     public DeliveryCommentResponseDto(DeliveryComment deliveryComment) {
@@ -21,7 +21,7 @@ public class DeliveryCommentResponseDto {
         this.comment = deliveryComment.getComment();
         this.createdDate = deliveryComment.getCreatedDate();
         this.modifiedDate = deliveryComment.getModifiedDate();
-//        this.nickname = deliveryComment.getUser().getNickname();
+        this.login = deliveryComment.getMember().getLogin();
         this.deliveryPostSeq = deliveryComment.getDeliveryPost().getDeliveryPostSeq();
     }
 }

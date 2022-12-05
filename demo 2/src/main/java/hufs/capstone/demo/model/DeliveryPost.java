@@ -31,6 +31,7 @@ public class DeliveryPost extends BaseTimeEntity{
     private String image_name;
     private String image_path;
     private String state = "진행중";
+    private Integer mScore;
 
     @OneToMany(mappedBy = "deliveryPost", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
     @OrderBy("commentId asc")
@@ -43,7 +44,7 @@ public class DeliveryPost extends BaseTimeEntity{
     public DeliveryPost(String title, String storeName, String storeCategory,
                     Long delivery_fee, String endTime,  Long done_num,
                     String host_id, String host_account, String location, Long point,
-                    String content, String image_name, String image_path) {
+                    String content, String image_name, String image_path, Integer mScore) {
         this.title = title;
         this.storeName = storeName;
         this.storeCategory = storeCategory;
@@ -57,6 +58,7 @@ public class DeliveryPost extends BaseTimeEntity{
         this.content = content;
         this.image_name = image_name;
         this.image_path = image_path;
+        this.mScore = mScore;
     }
 
     public void update(String title, String storeName, String storeCategory,

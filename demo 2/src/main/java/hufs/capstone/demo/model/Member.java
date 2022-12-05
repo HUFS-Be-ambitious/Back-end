@@ -43,6 +43,10 @@ public class Member {
     private String password; //비밀번호
     @Column(name = "grade")
     private Integer grade;
+    @Column(name = "account", unique = true)
+    private String account;
+    @Column(name = "bank")
+    private String bank;
 
     public static Member toSaveEntity(MemberDTO memberDTO){
         Member member = new Member();

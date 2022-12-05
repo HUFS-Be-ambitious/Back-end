@@ -21,7 +21,8 @@ public class ItemPostDto {
     private Long point;
     private Long person_price;
     private String host_id;
-    private Long mannerscore;
+    private String host_account;
+    private Integer mannerscore;
     private String content;
     private String image_path;
 
@@ -41,7 +42,8 @@ public class ItemPostDto {
         this.person_price = (entity.getPrice() + entity.getDelivery_fee()) / entity.getDone_num();
         this.itemCategory = entity.getItemCategory();
         this.host_id = entity.getHost_id();
-//        this.mannerscore = entity.getUser().getMannerscore();
+        this.host_account = entity.getHost_account();
+        this.mannerscore = entity.getMScore();
         this.content = entity.getContent();
         this.image_path = entity.getImage_path();
         this.comments = entity.getComments().stream().map(ItemCommentResponseDto::new).collect(Collectors.toList());

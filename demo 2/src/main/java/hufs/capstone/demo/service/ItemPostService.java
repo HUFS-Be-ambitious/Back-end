@@ -67,7 +67,7 @@ public class ItemPostService {
 
     //게시물 작성
     @Transactional
-    public void write(ItemPostWriteDto writeDto, MultipartFile file) throws Exception {
+    public void write(ItemPostWriteDto writeDto, String userId, MultipartFile file) throws Exception {
         String projectPath = System.getProperty("user.dir") + "\\demo 2\\src\\main\\resources\\static\\files";
 
         UUID uuid = UUID.randomUUID(); //식별자(랜덤이름 생성)
@@ -80,11 +80,12 @@ public class ItemPostService {
 
         String image_name = fileName;
         String image_path = "/files/" + fileName;
-        String hostId = "ckdanr98";    //session 아이디가 들어가야됨
-//        Member member  = memberRepository.findByLogin(hostId).orElseThrow(()
-//                -> new IllegalArgumentException("해당 게시물이 존재하지 않습니다."));
-//        String hostAccount = member.getAccount();
-        String hostAccount = "10010956037840"; //session 아이디에 해당되는 계좌가 들어가야 됨
+        String hostId = userId;    //session 아이디가 들어가야됨
+        Member member  = memberRepository.findByLogin(hostId).orElseThrow(()
+                -> new IllegalArgumentException("해당 게시물이 존재하지 않습니다."));
+        String hostAccount = member.getBank() + member.getAccount();
+//        String hostAccount = "10010956037840"; //session 아이디에 해당되는 계좌가 들어가야 됨
+        Integer mScore = memberRepository.findMScoreByLogin(hostId);
 
         ItemPost itemPost = new ItemPost(
                 writeDto.getTitle(),
@@ -100,7 +101,8 @@ public class ItemPostService {
                 writeDto.getPoint(), //로직 처리 필요
                 writeDto.getContent(),
                 image_name,
-                image_path
+                image_path,
+                mScore
         );
 
         itemPostRepository.save(itemPost);

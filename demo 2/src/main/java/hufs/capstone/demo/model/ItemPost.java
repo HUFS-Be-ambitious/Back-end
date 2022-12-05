@@ -32,6 +32,8 @@ public class ItemPost extends BaseTimeEntity{
     private String image_name;
     private String image_path;
     private String state = "진행중";
+
+    private Integer mScore;
 //    private User user;
 
     @OneToMany(mappedBy = "itemPost", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
@@ -45,7 +47,7 @@ public class ItemPost extends BaseTimeEntity{
     public ItemPost(String title, String item_name, String itemCategory, Long price,
                     Long delivery_fee, String endTime,  Long done_num,
                     String host_id, String host_account, String location, Long point,
-                    String content, String image_name, String image_path) {
+                    String content, String image_name, String image_path, Integer mScore) {
         this.title = title;
         this.item_name = item_name;
         this.itemCategory = itemCategory;
@@ -60,6 +62,7 @@ public class ItemPost extends BaseTimeEntity{
         this.content = content;
         this.image_name = image_name;
         this.image_path = image_path;
+        this.mScore = mScore;
     }
 
     public void update(String title, String item_name,String itemCategory,

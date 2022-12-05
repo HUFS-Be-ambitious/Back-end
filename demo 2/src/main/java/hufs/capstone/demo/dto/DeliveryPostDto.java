@@ -22,7 +22,9 @@ public class DeliveryPostDto {
     private Long point;
     private Long person_price;
     private String host_id;
-    private Long mannerscore;
+
+    private String host_account;
+    private Integer mScore;
     private String content;
     private String image_path;
     private List<DeliveryCommentResponseDto> comments;
@@ -39,7 +41,8 @@ public class DeliveryPostDto {
         this.endTime = entity.getEndTime();
         this.delivery_fee = entity.getDelivery_fee();
         this.host_id = entity.getHost_id();
-//        this.mannerscore = entity.getMember().getMannerscore();
+        this.host_account = entity.getHost_account();
+        this.mScore = entity.getMScore();
         this.content = entity.getContent();
         this.image_path = entity.getImage_path();
         this.comments = entity.getComments().stream().map(DeliveryCommentResponseDto::new).collect(Collectors.toList());

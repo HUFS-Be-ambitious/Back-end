@@ -3,12 +3,15 @@ package hufs.capstone.demo.service;
 import hufs.capstone.demo.dto.ItemCommentRequestDto;
 import hufs.capstone.demo.model.ItemComment;
 import hufs.capstone.demo.model.ItemPost;
+import hufs.capstone.demo.model.Member;
 import hufs.capstone.demo.repository.ItemCommentRepository;
 import hufs.capstone.demo.repository.ItemPostRepository;
 import hufs.capstone.demo.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
@@ -20,11 +23,11 @@ public class ItemCommentService {
 
     @Transactional
     public void commentWrite(String userId, Long itemPostSeq, ItemCommentRequestDto commentDto) {
-//        User user = userRepository.findByUserId(userId);
+        Optional<Member> optionalMemberEntity = memberRepository.findByLogin(userId);
         ItemPost itemPost = itemPostRepository.findById(itemPostSeq).orElseThrow(() ->
                 new IllegalArgumentException("댓글 쓰기 실패: 해당 게시글이 존재하지 않습니다." + itemPostSeq));
-
-//        commentDto.setMember(member);
+        Member member = optionalMemberEntity.get();
+        commentDto.setMember(member);
         commentDto.setItemPost(itemPost);
 
         ItemComment comment = commentDto.toEntity();
