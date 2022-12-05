@@ -4,7 +4,6 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0047edc4-ec89-4fc1-be56-c4a432c4f764" name="Changes" comment="jundo 파트 개발" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,7 +26,15 @@
       </state>
     </system>
   </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="jungha" />
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JpbToolWindowState">
@@ -55,17 +62,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/junseo/Desktop/무제/demo 2/src/main/java/hufs/capstone/demo&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;9de0862494cc3aa211be7c76dc6b547b&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -105,7 +101,8 @@
       <option name="presentableId" value="Default" />
       <updated>1669831985575</updated>
       <workItem from="1670096211441" duration="681000" />
-      <workItem from="1670105230051" duration="3236000" />
+      <workItem from="1670105230051" duration="3454000" />
+      <workItem from="1670221840204" duration="624000" />
     </task>
     <task id="LOCAL-00001" summary="jundo 파트 개발">
       <created>1669832463188</created>
@@ -114,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669832463189</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="findNickNameById추가">
+      <created>1670116415272</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1670116415272</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,6 +137,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="jundo 파트 개발" />
-    <option name="LAST_COMMIT_MESSAGE" value="jundo 파트 개발" />
+    <MESSAGE value="findNickNameById추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="findNickNameById추가" />
   </component>
 </project>
