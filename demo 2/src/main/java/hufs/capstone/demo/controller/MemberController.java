@@ -18,6 +18,7 @@ import java.util.Optional;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/member")
+@CrossOrigin("*")
 public class MemberController {
     private final MemberService memberService;
     private final MemberRepository memberRepository;
