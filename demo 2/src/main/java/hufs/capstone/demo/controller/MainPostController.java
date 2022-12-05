@@ -7,6 +7,7 @@ import hufs.capstone.demo.service.ItemPostService;
 import hufs.capstone.demo.service.MainPostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,6 +15,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
+@CrossOrigin("*")
 public class MainPostController {
 
     private final ItemPostService itemPostService;
