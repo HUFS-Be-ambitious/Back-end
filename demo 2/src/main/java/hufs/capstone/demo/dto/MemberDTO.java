@@ -25,10 +25,12 @@ public class MemberDTO {
     private String username;
     private String nick;
     private Integer grade;
+    private String account;
+    private String bank;
 
     public MemberDTO(String login, String mail, String password, String phone, String schoolname, String sId, String major,
                      String nick, String addr, String username, Integer gender, Integer point,
-                     Integer mScore, Integer age, Integer grade) {
+                     Integer mScore, Integer age, Integer grade, String account, String bank) {
         this.login = login;
         this.mail = mail;
         this.password = password;
@@ -44,6 +46,8 @@ public class MemberDTO {
         this.username = username;
         this.nick = nick;
         this.grade = grade;
+        this.account = account;
+        this.bank = bank;
     }
 
     public static MemberDTO toMemberDTO(Member member){
@@ -64,6 +68,8 @@ public class MemberDTO {
         memberDTO.setUsername(member.getUsername());
         memberDTO.setNick(member.getNick());
         memberDTO.setGrade(member.getGrade());
+        memberDTO.setAccount(member.getAccount());
+        memberDTO.setBank(member.getBank());
         return memberDTO;
     }
 }

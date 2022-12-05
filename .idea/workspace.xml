@@ -4,6 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+    <list default="true" id="0047edc4-ec89-4fc1-be56-c4a432c4f764" name="Changes" comment="회원정보수정 접근 수정">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/.gradle/7.5.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/.gradle/7.5.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/.gradle/7.5.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/.gradle/7.5.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/.gradle/7.5.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/.gradle/7.5.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/.gradle/7.5.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/.gradle/7.5.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/dto/MemberDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/dto/MemberDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/model/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/model/Member.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,6 +73,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/junseo/Desktop/무제/demo 2/src/main/java/hufs/capstone/demo&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;프로젝트&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;b4fb79403fad09506a32ff1f9a443880&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -73,17 +98,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="hufs.capstone.demo.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="hufs.capstone.demo.DemoApplication" />
@@ -102,7 +116,8 @@
       <updated>1669831985575</updated>
       <workItem from="1670096211441" duration="681000" />
       <workItem from="1670105230051" duration="3454000" />
-      <workItem from="1670221840204" duration="624000" />
+      <workItem from="1670221840204" duration="1148000" />
+      <workItem from="1670227387330" duration="673000" />
     </task>
     <task id="LOCAL-00001" summary="jundo 파트 개발">
       <created>1669832463188</created>
@@ -118,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670116415272</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="회원정보수정 접근 수정">
+      <created>1670222613138</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1670222613138</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +160,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="jundo 파트 개발" />
     <MESSAGE value="findNickNameById추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="findNickNameById추가" />
+    <MESSAGE value="회원정보수정 접근 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="회원정보수정 접근 수정" />
   </component>
 </project>
