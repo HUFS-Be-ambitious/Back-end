@@ -12,8 +12,7 @@ public class ItemCommentResponseDto {
     private String comment;
     private String createdDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm"));
     private String modifiedDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm"));
-
-    private String nickname;
+    private String login;
     private Long itemPostSeq;
     
     public ItemCommentResponseDto(ItemComment itemComment) {
@@ -21,7 +20,7 @@ public class ItemCommentResponseDto {
         this.comment = itemComment.getComment();
         this.createdDate = itemComment.getCreatedDate();
         this.modifiedDate = itemComment.getModifiedDate();
-//        this.nickname = itemComment.getUser().getNickname();
+        this.login = itemComment.getMember().getLogin();
         this.itemPostSeq = itemComment.getItemPost().getItemPostSeq();
     }
 }

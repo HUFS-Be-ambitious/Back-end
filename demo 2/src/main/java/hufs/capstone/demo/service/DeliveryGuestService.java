@@ -22,10 +22,9 @@ public class DeliveryGuestService {
         DeliveryPost deliveryPost = deliveryPostRepository.findById(deliveryPostSeq).orElseThrow(() ->
                 new IllegalArgumentException("공구 참여 실패: 해당 게시글이 존재하지 않습니다." + deliveryPostSeq));
 
-        String guestId = "ckdanr99"; //현재 사용중인 유저 아이디 사용해야함
+        String guestId = userId; //현재 사용중인 유저 아이디 사용해야함
         String hostId = deliveryPost.getHost_id();
 
-//        if(deliveryGuestRepository.existsByGuestId(guestId)){}
         if (deliveryGuestRepository.existsGuestId(deliveryPostSeq, guestId) == 0) {
             DeliveryGuestList guest = new DeliveryGuestList(
                     hostId,

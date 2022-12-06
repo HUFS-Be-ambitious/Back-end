@@ -10,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -17,15 +19,25 @@ import java.util.List;
 public class ItemPostController {
     private final ItemPostService itemPostService;
     private final ItemGuestService itemGuestService;
+
+//    HttpSession session;
 //    private final MemberService memberService;
 
     //물건
 
 
     @PostMapping("/itempost/write")
-    public void itemPostWrite(@RequestPart ItemPostWriteDto writeDto, @RequestPart MultipartFile file) throws Exception {
-        itemPostService.write(writeDto, file); //session 처리 필요
+    public void itemPostWrite(@RequestPart ItemPostWriteDto writeDto, @RequestPart MultipartFile file, HttpSession session) throws Exception {
+
+        String userId = (String)session.getAttribute("id");
+        itemPostService.write(writeDto, userId, file); //session 처리 필요
     }
+
+//    @PostMapping("/itempost/write")
+//    public void itemPostWrite(@RequestPart ItemPostWriteDto writeDto, @RequestPart MultipartFile file) throws Exception {
+//        itemPostService.write(writeDto, file); //session 처리 필요
+//    }
+
 
 
     @GetMapping("/itempost/list")
@@ -63,7 +75,7 @@ public class ItemPostController {
     // /{itemCategory}/search/keyword={keyword}&page={pageNo}&orderby={orderCriteria}
     @GetMapping("/itempost/list/search/{itemCategory}")
     public Page<ItemPostResponseDto> searchByCategory(@PathVariable("itemCategory") String itemCategory,
-                                   @RequestParam("keyword") String keyword,
+                                   @RequestParam(required = false, defaultValue = "", value = "keyword") String keyword,
                                    @RequestParam(required = false, defaultValue = "0", value = "page") int pageNo,
                                    @RequestParam(required = false, defaultValue = "itemPostSeq", value = "orderby") String orderCriteria,
                                    Pageable pageable,
@@ -79,23 +91,24 @@ public class ItemPostController {
 
     //개별 조회
     @GetMapping("/itempost/view/{itemPostSeq}")
-    public String itemPostViewDetail(@PathVariable Long itemPostSeq, Model model) {
+    public ItemPostDto itemPostViewDetail(@PathVariable Long itemPostSeq, Model model) {
         ItemPostDto itemPostDto = itemPostService.viewDetail(itemPostSeq);
         List<ItemCommentResponseDto> comments = itemPostDto.getComments();
         model.addAttribute("itemPost", itemPostDto);
-        model.addAttribute("comments", comments);
-        return "itempostview";
+        return itemPostDto;
     }
 
     //공구 참여 등록
     @GetMapping("/itempost/view/{itemPostSeq}/register")
-    public void itemPostGuestRegister(@PathVariable Long itemPostSeq, String userId) {
+    public void itemPostGuestRegister(@PathVariable Long itemPostSeq, HttpSession session) {
+        String userId = (String)session.getAttribute("id");
         itemGuestService.guestSave(itemPostSeq, userId);
     }
 
     //공구 참여 취소
     @DeleteMapping("/itempost/view/{itemPostSeq}/register")
-    public void itemPostGuestDelete(@PathVariable Long itemPostSeq, String userId) {
+    public void itemPostGuestDelete(@PathVariable Long itemPostSeq, HttpSession session) {
+        String userId = (String)session.getAttribute("id");
         itemGuestService.guestDelete(itemPostSeq, userId);
     }
 

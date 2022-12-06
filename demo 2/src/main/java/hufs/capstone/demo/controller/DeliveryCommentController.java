@@ -5,6 +5,8 @@ import hufs.capstone.demo.service.DeliveryCommentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
+
 @RequiredArgsConstructor
 @RestController
 public class DeliveryCommentController {
@@ -12,8 +14,8 @@ public class DeliveryCommentController {
 
     //댓글 작성
     @PostMapping("/deliverypost/{deliveryPostSeq}/comments")
-    public void commentWrite(@PathVariable Long deliveryPostSeq, @RequestBody DeliveryCommentRequestDto commentDto) {
-        String userId = "WindowJelly"; //userId 불러오기
+    public void commentWrite(@PathVariable Long deliveryPostSeq, @RequestBody DeliveryCommentRequestDto commentDto, HttpSession session) {
+        String userId = (String)session.getAttribute("id"); //userId 불러오기
         commentService.commentWrite(userId, deliveryPostSeq, commentDto);
     }
 

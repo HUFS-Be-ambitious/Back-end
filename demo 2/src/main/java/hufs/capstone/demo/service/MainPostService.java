@@ -25,7 +25,6 @@ public class MainPostService {
     }
     @Transactional(readOnly = true)
     public List<DeliveryPost> viewDeliveryPointList() {
-
         return deliveryPostRepository.findTop4ByOrderByPointDesc();
     }
 

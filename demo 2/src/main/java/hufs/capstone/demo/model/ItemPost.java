@@ -32,6 +32,8 @@ public class ItemPost extends BaseTimeEntity{
     private String image_name;
     private String image_path;
     private String state = "진행중";
+
+    private Integer mScore;
 //    private User user;
 
     @OneToMany(mappedBy = "itemPost", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
@@ -43,16 +45,16 @@ public class ItemPost extends BaseTimeEntity{
 
     @Builder
     public ItemPost(String title, String item_name, String itemCategory, Long price,
-                    Long delivery_fee, Long done_num, String endTime,
+                    Long delivery_fee, String endTime,  Long done_num,
                     String host_id, String host_account, String location, Long point,
-                    String content, String image_name, String image_path) {
+                    String content, String image_name, String image_path, Integer mScore) {
         this.title = title;
         this.item_name = item_name;
         this.itemCategory = itemCategory;
         this.price = price;
         this.delivery_fee = delivery_fee;
-        this.done_num = done_num;
         this.endTime = endTime;
+        this.done_num = done_num;
         this.host_id = host_id;
         this.host_account = host_account;
         this.location = location;
@@ -60,19 +62,20 @@ public class ItemPost extends BaseTimeEntity{
         this.content = content;
         this.image_name = image_name;
         this.image_path = image_path;
+        this.mScore = mScore;
     }
 
     public void update(String title, String item_name,String itemCategory,
-                       Long price, Long delivery_fee, Long done_num,
-                       String endTime, String location, Long point, String content,
+                       Long price, Long delivery_fee, String endTime, Long done_num,
+                       String location, Long point, String content,
                        String image_name, String image_path) {
         this.title = title;
         this.item_name = item_name;
         this.itemCategory = itemCategory;
         this.price = price;
         this.delivery_fee = delivery_fee;
-        this.done_num = done_num;
         this.endTime = endTime;
+        this.done_num = done_num;
         this.location = location;
         this.point = point;
         this.content = content;

@@ -17,11 +17,12 @@ import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/member")
 public class MemberController {
     private final MemberService memberService;
     private final MemberRepository memberRepository;
     //회원 가입
-    @PostMapping("/member/login/add")
+    @PostMapping("/login/add")
     public ResponseEntity<MemberDTO> addUser(@RequestBody MemberDTO memberDTO){
         if(memberService.save(memberDTO) != null){
             return new ResponseEntity<>(memberDTO, HttpStatus.CREATED);
@@ -30,7 +31,7 @@ public class MemberController {
         }
     }
     //회원 삭제
-    @DeleteMapping("/member/login/delete")
+    @DeleteMapping("login/delete")
     public ResponseEntity<String> delUser(@RequestBody MemberLoginDTO dto, HttpSession session){
         if(session.getAttribute("id") == null){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -41,22 +42,16 @@ public class MemberController {
     }
 
     //회원 정보 수정
-    @PostMapping("/member/mod/{login}")
-    public ResponseEntity<MemberDTO> modUser(@RequestBody MemberDTO dto, HttpServletRequest req){
-        HttpSession session = req.getSession();
-        String login = (String) session.getAttribute("id");
-        if(dto.getLogin().equals(login) == false){
+    @PostMapping("/login/mod")
+    public ResponseEntity<MemberDTO> modUser(@RequestBody MemberDTO dto){
+        if(memberService.update(dto) != null){
+            return new ResponseEntity<>(dto, HttpStatus.OK);
+        } else{
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-        } else{
-            if(memberService.update(dto) != null){
-                return new ResponseEntity<>(dto, HttpStatus.OK);
-        } else{
-                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-            }
         }
     }
 
-    @GetMapping("/member/find-all")
+    @GetMapping("/find-all")
     public ResponseEntity<List<MemberDTO>> findAll(){
         List<MemberDTO> memberDTOList;
         memberDTOList = memberService.findAll();
@@ -67,25 +62,25 @@ public class MemberController {
         }
     }
     //로그인 & 세션 부여
-    @PostMapping("/member/login")
-    public ResponseEntity<String> login(@RequestBody MemberLoginDTO ldto, HttpServletRequest req){
+    @PostMapping("/login")
+    public String login(@RequestBody MemberLoginDTO ldto, HttpServletRequest req){
         MemberDTO dto = memberService.find(ldto.getLogin(), ldto.getPassword());
         if(dto != null){
             HttpSession session = req.getSession();
             session.setAttribute("id", ldto.getLogin());
-            return new ResponseEntity<>(HttpStatus.OK);
+            return "/";        //추후에 메인 페이지로 redirect
         } else{
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            return "redirect: /login";
         }
     }
     //로그아웃 & 세션 제거
-    @GetMapping("/member/login/logout")
+    @GetMapping("/login/logout")
     public String logout(HttpSession session){
         session.invalidate();
         return "redirect: /login";
     }
     //매너점수 1점 추가
-    @PostMapping("/member/mannerscore/{login}/increase")
+    @PostMapping("/mannerscore/{login}/increase")
     public ResponseEntity<Integer> increaseMannerScore(@PathVariable String login){
         MemberDTO dto = memberService.findByLogin(login);
         memberService.increaseMannerScore(dto,login);
@@ -103,7 +98,7 @@ public class MemberController {
         return new ResponseEntity<>(HttpStatus.OK); //페이지 어디로 redirect?
     }
     //매너 점수 1점 감소
-    @PostMapping("/member/mannerscore/{login}/decrease")
+    @PostMapping("/mannerscore/{login}/decrease")
     public ResponseEntity<String> decreaseMannerScore(@PathVariable String login){
         MemberDTO dto = memberService.findByLogin(login);
         memberService.decreaseMannerScore(dto, login);
@@ -123,7 +118,7 @@ public class MemberController {
          */
     }
 
-    @GetMapping("/member/findby/{login}")
+    @GetMapping("/findby/{login}")
     public ResponseEntity<MemberDTO> findbylogin(@PathVariable String login) {
         MemberDTO dto = memberService.findByLogin(login);
         if(dto == null){
