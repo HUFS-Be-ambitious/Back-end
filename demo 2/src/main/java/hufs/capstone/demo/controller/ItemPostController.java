@@ -1,8 +1,8 @@
 package hufs.capstone.demo.controller;
 
+import hufs.capstone.demo.dto.*;
 import hufs.capstone.demo.service.ItemGuestService;
 import hufs.capstone.demo.service.ItemPostService;
-import hufs.capstone.demo.dto.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -10,7 +10,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
@@ -27,7 +26,7 @@ public class ItemPostController {
 
 
     @PostMapping("/itempost/write")
-    public void itemPostWrite(@RequestPart ItemPostWriteDto writeDto, @RequestPart MultipartFile file, HttpSession session) throws Exception {
+    public void itemPostWrite(@RequestPart ItemPostWriteDto writeDto, @RequestPart(required = false) MultipartFile file, HttpSession session) throws Exception {
 
         String userId = (String)session.getAttribute("id");
         itemPostService.write(writeDto, userId, file); //session 처리 필요
