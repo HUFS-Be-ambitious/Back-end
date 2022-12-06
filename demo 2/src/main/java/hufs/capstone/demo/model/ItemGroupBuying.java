@@ -1,6 +1,7 @@
 package hufs.capstone.demo.model;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Column;
@@ -11,6 +12,7 @@ import java.util.List;
 
 @Entity
 @Getter @Setter
+@NoArgsConstructor
 public class ItemGroupBuying {
     @Id
     @GeneratedValue
