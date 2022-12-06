@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @Log4j2
 public class ItemGroupBuyingController {
-    private ItemGroupBuyingService itemGroupBuyingService;
+    private final ItemGroupBuyingService itemGroupBuyingService;
 
     @GetMapping("/api/item/findAll")
     public ItemGroupBuying findAllItems() {
