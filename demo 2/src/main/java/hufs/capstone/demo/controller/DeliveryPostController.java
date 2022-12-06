@@ -15,7 +15,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 @RequiredArgsConstructor
 @RestController
-@CrossOrigin("*")
 public class DeliveryPostController {
     private final DeliveryPostService deliveryPostService;
     private final DeliveryGuestService deliveryGuestService;
