@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 @Log4j2
-@CrossOrigin("*")
 public class ItemGroupBuyingController {
     private ItemGroupBuyingService itemGroupBuyingService;
 

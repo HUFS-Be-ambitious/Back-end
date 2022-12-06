@@ -15,7 +15,6 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-@CrossOrigin("*")
 public class MainPostController {
 
     private final ItemPostService itemPostService;
