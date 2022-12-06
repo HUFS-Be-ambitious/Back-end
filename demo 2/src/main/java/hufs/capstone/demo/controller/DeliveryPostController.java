@@ -1,6 +1,9 @@
 package hufs.capstone.demo.controller;
 
-import hufs.capstone.demo.dto.*;
+import hufs.capstone.demo.dto.DeliveryPostDto;
+import hufs.capstone.demo.dto.DeliveryPostResponseDto;
+import hufs.capstone.demo.dto.DeliveryPostUpdateDto;
+import hufs.capstone.demo.dto.DeliveryPostWriteDto;
 import hufs.capstone.demo.service.DeliveryGuestService;
 import hufs.capstone.demo.service.DeliveryPostService;
 import lombok.RequiredArgsConstructor;
@@ -11,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
-import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
@@ -31,7 +33,7 @@ public class DeliveryPostController {
 //    }
 
     @PostMapping("/deliverypost/write")
-    public void deliveryPostWrite(@RequestPart DeliveryPostWriteDto writeDto, @RequestPart MultipartFile file, HttpSession session) throws Exception{
+    public void deliveryPostWrite(@RequestPart DeliveryPostWriteDto writeDto, @RequestPart(required = false) MultipartFile file, HttpSession session) throws Exception{
         String userId = (String)session.getAttribute("id");
 //        String userId = "ckdanr98";
         deliveryPostService.write(writeDto, userId, file); //session 처리 필요
