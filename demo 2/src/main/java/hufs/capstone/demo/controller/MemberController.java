@@ -68,14 +68,14 @@ public class MemberController {
     }
     //로그인 & 세션 부여
     @PostMapping("/member/login")
-    public String login(@RequestBody MemberLoginDTO ldto, HttpServletRequest req){
+    public ResponseEntity<String> login(@RequestBody MemberLoginDTO ldto, HttpServletRequest req){
         MemberDTO dto = memberService.find(ldto.getLogin(), ldto.getPassword());
         if(dto != null){
             HttpSession session = req.getSession();
             session.setAttribute("id", ldto.getLogin());
-            return "/main";        //추후에 메인 페이지로 redirect
+            return new ResponseEntity<>(HttpStatus.OK);
         } else{
-            return "redirect: /member/login";
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
     }
     //로그아웃 & 세션 제거
