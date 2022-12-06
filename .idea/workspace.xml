@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0047edc4-ec89-4fc1-be56-c4a432c4f764" name="Changes" comment="계좌 빠진거 추가">
-      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/controller/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/controller/ItemPostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/controller/ItemPostController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,6 +122,7 @@
       <workItem from="1670227387330" duration="6411000" />
       <workItem from="1670246813965" duration="2200000" />
       <workItem from="1670355009016" duration="2709000" />
+      <workItem from="1670358392579" duration="1141000" />
     </task>
     <task id="LOCAL-00001" summary="jundo 파트 개발">
       <created>1669832463188</created>
