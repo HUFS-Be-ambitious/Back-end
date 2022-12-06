@@ -73,18 +73,18 @@ public class MemberService {
             return 0;
         }
     }
-    public MemberDTO findByNick(String nick){
-        Optional<Member>optionalMemberEntity = memberRepository.findByNick(nick);
+    public String findNicknameById(Long id){
+        Optional<Member>optionalMemberEntity = memberRepository.findById(id);
         if(optionalMemberEntity.isPresent()){
             Member member = optionalMemberEntity.get();
                MemberDTO memberDTO = MemberDTO.toMemberDTO(member);
-            return memberDTO;
+            return memberDTO.getNick();
         } else{
             return null;
         }
     }
 
-    public MemberDTO findById(Long id){
+    public MemberDTO findMemberById(Long id){
         Optional<Member> optionalMemberEntity = memberRepository.findById(id);
         if(optionalMemberEntity.isPresent()){
             Member member = optionalMemberEntity.get();
