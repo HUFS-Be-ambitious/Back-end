@@ -65,6 +65,8 @@ public class Member {
         member.setMajor(memberDTO.getMajor());
         member.setSId(memberDTO.getSId());
         member.setGrade(memberDTO.getGrade());
+        member.setAccount(memberDTO.getAccount());
+        member.setBank(memberDTO.getBank());
         return member;
     }
     public static Member toUpdateEntity(MemberDTO memberDTO){
