@@ -1,4 +1,4 @@
-//package com.project.capstoneproject.dto;
+package hufs.capstone.demo.dto;//package com.project.capstoneproject.dto;
 //
 //import com.project.capstoneproject.entity.ItemComment;
 //import com.project.capstoneproject.entity.ItemGuestList;
