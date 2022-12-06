@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 public class DeliveryPostWriteDto {
     //    private User user;
     private String title;
-    private String store_name;
+    private String storeName;
     private String storeCategory;
     private Long delivery_fee;
     private String endTime;
@@ -20,11 +20,11 @@ public class DeliveryPostWriteDto {
     private Long point;
 
     @Builder
-    public DeliveryPostWriteDto(String title, String store_name, String storeCategory,
+    public DeliveryPostWriteDto(String title, String storeName, String storeCategory,
                              Long delivery_fee, String endTime,
                             Long done_num, String location, String content, Long point) {
         this.title = title;
-        this.store_name = store_name;
+        this.storeName = storeName;
         this.storeCategory = storeCategory;
         this.delivery_fee = delivery_fee;
         this.endTime = endTime;
@@ -38,7 +38,7 @@ public class DeliveryPostWriteDto {
         return DeliveryPost.builder()
 //                .user(user)
                 .title(title)
-                .store_name(store_name)
+                .storeName(storeName)
                 .storeCategory(storeCategory)
                 .delivery_fee(delivery_fee)
                 .endTime(endTime)

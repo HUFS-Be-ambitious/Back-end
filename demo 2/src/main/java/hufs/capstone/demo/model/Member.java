@@ -37,7 +37,7 @@ public class Member {
     private String schoolname; //학교 이름
     @Column(name = "major")
     private String major; //전공
-    @Column(name = "sId", unique = true)
+    @Column(name = "sId")
     private String sId; //학번
     @Column(length = 20, name = "password")
     private String password; //비밀번호
@@ -65,8 +65,6 @@ public class Member {
         member.setMajor(memberDTO.getMajor());
         member.setSId(memberDTO.getSId());
         member.setGrade(memberDTO.getGrade());
-        member.setAccount(memberDTO.getAccount());
-        member.setBank(memberDTO.getBank());
         return member;
     }
     public static Member toUpdateEntity(MemberDTO memberDTO){

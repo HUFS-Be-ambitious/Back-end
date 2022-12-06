@@ -1,4 +1,4 @@
-//package com.project.capstoneproject.controller;
+package hufs.capstone.demo.controller;//package com.project.capstoneproject.controller;
 //
 //import com.project.capstoneproject.dto.ItemCommentRequestDto;
 //import com.project.capstoneproject.service.ItemGuestService;

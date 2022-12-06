@@ -22,15 +22,15 @@ public class ItemPostUpdateDto {
 
     @Builder
     public void itemPostUpdateDto(String title, String item_name, String itemCategory,
-                                  Long price, Long delivery_fee, Long done_num,
-                                  String endTime, String location, Long point, String content) {
+                                  Long price, Long delivery_fee, String endTime, Long done_num,
+                                   String location, Long point, String content) {
         this.title = title;
         this.item_name = item_name;
         this.itemCategory = itemCategory;
         this.price = price;
         this.delivery_fee = delivery_fee;
-        this.done_num = done_num;
         this.endTime = endTime;
+        this.done_num = done_num;
         this.location = location;
         this.point = point;
         this.content = content;
