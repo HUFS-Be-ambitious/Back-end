@@ -27,7 +27,7 @@ public class ItemPostService {
     //게시물 작성
     @Transactional
     public void write(ItemPostWriteDto writeDto, MultipartFile file) throws Exception {
-        String projectPath = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\files";
+        String projectPath = System.getProperty("user.dir") + "\\demo 2\\src\\main\\resources\\static\\files";
 
         UUID uuid = UUID.randomUUID(); //식별자(랜덤이름 생성)
 
