@@ -9,12 +9,6 @@
         </processorPath>
         <module name="demo.main" />
       </profile>
-      <profile name="Maven default annotation processors profile" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <module name="demo" />
-      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="11" />
   </component>
