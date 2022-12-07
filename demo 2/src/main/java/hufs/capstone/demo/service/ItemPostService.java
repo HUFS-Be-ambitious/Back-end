@@ -1,5 +1,6 @@
 package hufs.capstone.demo.service;
 
+import hufs.capstone.demo.aws.S3Uploader;
 import hufs.capstone.demo.dto.ItemPostDto;
 import hufs.capstone.demo.dto.ItemPostResponseDto;
 import hufs.capstone.demo.dto.ItemPostUpdateDto;
@@ -17,7 +18,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.util.UUID;
 
@@ -28,58 +28,14 @@ public class ItemPostService {
     private final ItemPostRepository itemPostRepository;
     private final MemberRepository memberRepository;
 
-//    @Transactional
-//    public void write(ItemPostWriteDto writeDto, String userId, MultipartFile file) throws Exception {
-//        String projectPath = System.getProperty("user.dir") + "\\demo 2\\src\\main\\resources\\static\\files";
-//
-//        UUID uuid = UUID.randomUUID(); //식별자(랜덤이름 생성)
-//
-//        String fileName = uuid + "_" + file.getOriginalFilename();
-//
-//        File saveFile = new File(projectPath, fileName);
-//
-//        file.transferTo(saveFile);
-//
-//        String image_name = fileName;
-//        String image_path = "/files/" + fileName;
-//        String host_id = userId;    //session 아이디가 들어가야됨
-////        String host_account = getMemberId; //session 아이디에 해당되는 계좌가 들어가야 됨
-//
-//        ItemPost itemPost = new ItemPost(
-//                writeDto.getTitle(),
-//                writeDto.getItem_name(),
-//                writeDto.getItemCategory(),
-//                writeDto.getPrice(),
-//                writeDto.getDelivery_fee(),
-//                writeDto.getDone_num(),
-//                writeDto.getEndTime(),
-//                host_id,
-//                host_account,
-//                writeDto.getLocation(),
-//                writeDto.getPoint(), //로직 처리 필요
-//                writeDto.getContent(),
-//                image_name,
-//                image_path
-//        );
-//
-//        itemPostRepository.save(itemPost);
-//    }
+    private final S3Uploader s3Uploader;
+
 
     //게시물 작성
     @Transactional
     public void write(ItemPostWriteDto writeDto, String userId, MultipartFile file) throws Exception {
-        String projectPath = System.getProperty("user.dir") + "\\demo 2\\src\\main\\resources\\static\\files";
-
-        UUID uuid = UUID.randomUUID(); //식별자(랜덤이름 생성)
-
-        String fileName = uuid + "_" + file.getOriginalFilename();
-
-        File saveFile = new File(projectPath, fileName);
-
-        file.transferTo(saveFile);
-
-        String image_name = fileName;
-        String image_path = "/files/" + fileName;
+        String image_name = file.getName();
+        String image_path = s3Uploader.upload(file,"static");
         String hostId = userId;    //session 아이디가 들어가야됨
         Member member  = memberRepository.findByLogin(hostId).orElseThrow(()
                 -> new IllegalArgumentException("해당 게시물이 존재하지 않습니다."));
