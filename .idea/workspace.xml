@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0047edc4-ec89-4fc1-be56-c4a432c4f764" name="Changes" comment="계좌 빠진거 추가">
+    <list default="true" id="0047edc4-ec89-4fc1-be56-c4a432c4f764" name="Changes" comment="cors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/controller/ItemPostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/src/main/java/hufs/capstone/demo/controller/ItemPostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo 2/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/demo 2/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +122,7 @@
       <workItem from="1670227387330" duration="6411000" />
       <workItem from="1670246813965" duration="2200000" />
       <workItem from="1670355009016" duration="2709000" />
-      <workItem from="1670358392579" duration="1141000" />
+      <workItem from="1670358392579" duration="2108000" />
     </task>
     <task id="LOCAL-00001" summary="jundo 파트 개발">
       <created>1669832463188</created>
@@ -166,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670357482966</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="cors">
+      <created>1670359844766</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1670359844766</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,6 +197,7 @@
     <MESSAGE value="member에 계좌,은행 추가" />
     <MESSAGE value="컴파일 오류 수정" />
     <MESSAGE value="계좌 빠진거 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="계좌 빠진거 추가" />
+    <MESSAGE value="cors" />
+    <option name="LAST_COMMIT_MESSAGE" value="cors" />
   </component>
 </project>
