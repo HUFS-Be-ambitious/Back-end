@@ -26,7 +26,7 @@ public class ItemPostController {
 
 
     @PostMapping("/itempost/write")
-    public void itemPostWrite(@RequestPart ItemPostWriteDto writeDto, @RequestPart(required = false) MultipartFile file, HttpSession session) throws Exception {
+    public void itemPostWrite(@RequestPart ItemPostWriteDto writeDto, @RequestParam("file") MultipartFile file, HttpSession session) throws Exception {
 
         String userId = (String)session.getAttribute("id");
         itemPostService.write(writeDto, userId, file); //session 처리 필요

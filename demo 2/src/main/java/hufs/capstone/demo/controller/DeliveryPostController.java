@@ -33,7 +33,7 @@ public class DeliveryPostController {
 //    }
 
     @PostMapping("/deliverypost/write")
-    public void deliveryPostWrite(@RequestPart DeliveryPostWriteDto writeDto, @RequestPart(required = false) MultipartFile file, HttpSession session) throws Exception{
+    public void deliveryPostWrite(@RequestPart DeliveryPostWriteDto writeDto, @RequestParam("file") MultipartFile file, HttpSession session) throws Exception{
         String userId = (String)session.getAttribute("id");
 //        String userId = "ckdanr98";
         deliveryPostService.write(writeDto, userId, file); //session 처리 필요
